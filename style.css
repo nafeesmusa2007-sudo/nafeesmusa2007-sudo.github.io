@@ -1,0 +1,279 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(0,0,0,0.8);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:70px;
+    animation:rotateLogo 8s linear infinite;
+}
+
+@keyframes rotateLogo{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.logo h1{
+    color:#d4a373;
+    font-size:30px;
+    text-shadow:0 0 10px #d4a373;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-left:25px;
+    font-size:18px;
+    transition:0.4s;
+    position:relative;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#d4a373;
+    transition:0.4s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+nav a:hover{
+    color:#d4a373;
+}
+
+.hero{
+    height:100vh;
+    background:url('images/coffee-shop.jpg') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.6);
+    padding:40px;
+    border-radius:20px;
+    animation:fadeIn 2s ease;
+}
+
+.hero-content h2{
+    font-size:60px;
+    color:#d4a373;
+    margin-bottom:20px;
+    animation:glow 2s infinite alternate;
+}
+
+.hero-content p{
+    font-size:22px;
+    line-height:1.8;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #d4a373;
+    }
+    to{
+        text-shadow:0 0 25px #fff;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.section-title{
+    text-align:center;
+    font-size:45px;
+    margin:50px 0;
+    color:#d4a373;
+    animation:slideDown 2s ease;
+}
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.menu-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    padding:40px 8%;
+}
+
+.card{
+    background:#1e1e1e;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.5s;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+    transform:translateY(-15px) scale(1.03);
+    box-shadow:0 0 30px #d4a373;
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.card:hover img{
+    transform:scale(1.1);
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    color:#d4a373;
+    margin-bottom:10px;
+}
+
+.card-content p{
+    line-height:1.6;
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:22px;
+    color:#fff;
+    font-weight:bold;
+}
+
+.about-section,
+.contact-section{
+    padding:60px 10%;
+    text-align:center;
+}
+
+.about-section p{
+    font-size:22px;
+    line-height:2;
+    animation:fadeIn 2s ease;
+}
+
+.contact-form{
+    max-width:700px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    outline:none;
+}
+
+.contact-form button{
+    padding:18px;
+    background:#d4a373;
+    color:black;
+    border:none;
+    font-size:20px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.contact-form button:hover{
+    background:white;
+    transform:scale(1.05);
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    margin-top:50px;
+}
+
+.hamburger{
+    font-size:30px;
+    cursor:pointer;
+    display:none;
+    color:white;
+}
+
+/* Desktop menu */
+nav{
+    display:flex;
+    gap:20px;
+}
+
+/* Mobile view */
+@media(max-width:768px){
+
+    .hamburger{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        flex-direction:column;
+        background:#111;
+        position:absolute;
+        top:70px;
+        right:20px;
+        padding:20px;
+        border-radius:10px;
+    }
+
+    nav.active{
+        display:flex;
+    }
+}

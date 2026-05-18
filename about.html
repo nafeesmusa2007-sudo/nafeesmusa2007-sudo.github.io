@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Royal Brew</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#0b0b0b;
+            color:white;
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 8%;
+            background:rgba(0,0,0,0.6);
+            backdrop-filter:blur(10px);
+            position:fixed;
+            width:100%;
+            top:0;
+            z-index:1000;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo img{
+            width:60px;
+            animation:spin 12s linear infinite;
+        }
+
+        @keyframes spin{
+            100%{transform:rotate(360deg);}
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 12px;
+            position:relative;
+        }
+
+        nav a::after{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-5px;
+            width:0;
+            height:2px;
+            background:#d4a373;
+            transition:0.3s;
+        }
+
+        nav a:hover::after{
+            width:100%;
+        }
+
+        /* HERO */
+        .about-hero{
+            height:60vh;
+            background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('images/coffee-shop.jpg') center/cover no-repeat;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            padding:20px;
+        }
+
+        .about-hero h1{
+            font-size:55px;
+            color:#d4a373;
+            text-shadow:0 0 20px rgba(212,163,115,0.6);
+            animation:fadeUp 1.2s ease;
+        }
+
+        @keyframes fadeUp{
+            from{opacity:0; transform:translateY(40px);}
+            to{opacity:1; transform:translateY(0);}
+        }
+
+        /* ABOUT CONTENT */
+        .about-content{
+            padding:80px 10%;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:40px;
+            align-items:center;
+        }
+
+        .about-text h2{
+            color:#d4a373;
+            font-size:40px;
+            margin-bottom:20px;
+        }
+
+        .about-text p{
+            color:#ccc;
+            line-height:1.9;
+            font-size:18px;
+        }
+
+        .about-box{
+            background:#1a1a1a;
+            padding:30px;
+            border-radius:15px;
+            transition:0.3s;
+            border:1px solid rgba(255,255,255,0.05);
+        }
+
+        .about-box:hover{
+            transform:translateY(-10px);
+            box-shadow:0 0 25px #d4a373;
+        }
+
+        .about-box h3{
+            color:#d4a373;
+            margin-bottom:10px;
+        }
+
+        .about-box p{
+            color:#bbb;
+            font-size:15px;
+            line-height:1.6;
+        }
+
+        /* BOTTOM SECTION */
+        .about-bottom{
+            text-align:center;
+            padding:80px 10%;
+            background:linear-gradient(to right,#0b0b0b,#1a1a1a);
+        }
+
+        .about-bottom h2{
+            color:#d4a373;
+            font-size:40px;
+            margin-bottom:15px;
+        }
+
+        .about-bottom p{
+            color:#ccc;
+            font-size:18px;
+            max-width:800px;
+            margin:auto;
+            line-height:1.8;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="WhatsApp_Image_2026-05-18_at_11.21.50_AM-removebg-preview.png" alt="logo">
+        <h1>Royal Brew</h1>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="about-hero">
+    <h1>About Royal Brew</h1>
+</section>
+
+<section class="about-content">
+
+    <div class="about-text">
+        <h2>Our Story</h2>
+        <p>
+            Royal Brew is not just a coffee shop — it is a luxury experience built for coffee lovers.
+            We focus on premium quality beans, expert baristas, and a relaxing modern atmosphere.
+            Every cup is crafted with passion and perfection.
+        </p>
+    </div>
+
+    <div class="about-box">
+        <h3>Premium Quality</h3>
+        <p>We carefully select high-quality coffee beans from the best farms around the world.</p>
+    </div>
+
+    <div class="about-box">
+        <h3>Expert Baristas</h3>
+        <p>Our trained professionals ensure every cup is perfectly brewed and served.</p>
+    </div>
+
+    <div class="about-box">
+        <h3>Luxury Experience</h3>
+        <p>Modern interior design with calm lighting creates the perfect coffee environment.</p>
+    </div>
+
+</section>
+
+<section class="about-bottom">
+    <h2>We Love Coffee</h2>
+    <p>
+        Our mission is to bring people together through the love of coffee.
+        Every visit to Royal Brew is designed to be memorable, relaxing, and premium.
+    </p>
+</section>
+
+</body>
+</html>

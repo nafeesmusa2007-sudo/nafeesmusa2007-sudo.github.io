@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Royal Brew</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#0b0b0b;
+            color:white;
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 8%;
+            background:rgba(0,0,0,0.6);
+            backdrop-filter:blur(10px);
+            position:fixed;
+            width:100%;
+            top:0;
+            z-index:1000;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo img{
+            width:60px;
+            animation:spin 12s linear infinite;
+        }
+
+        @keyframes spin{
+            100%{transform:rotate(360deg);}
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 12px;
+            position:relative;
+        }
+
+        nav a::after{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-5px;
+            width:0;
+            height:2px;
+            background:#d4a373;
+            transition:0.3s;
+        }
+
+        nav a:hover::after{
+            width:100%;
+        }
+
+        /* HERO */
+        .contact-hero{
+            height:45vh;
+            background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('images/coffee-shop.jpg') center/cover no-repeat;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            padding:20px;
+            margin-top:80px;
+        }
+
+        .contact-hero h1{
+            font-size:55px;
+            color:#d4a373;
+            text-shadow:0 0 20px rgba(212,163,115,0.6);
+            animation:fadeUp 1.2s ease;
+        }
+
+        @keyframes fadeUp{
+            from{opacity:0; transform:translateY(40px);}
+            to{opacity:1; transform:translateY(0);}
+        }
+
+        /* CONTENT GRID */
+        .contact-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:40px;
+            padding:80px 10%;
+            align-items:start;
+        }
+
+        .contact-info{
+            background:#1a1a1a;
+            padding:30px;
+            border-radius:15px;
+            border:1px solid rgba(255,255,255,0.05);
+            transition:0.3s;
+        }
+
+        .contact-info:hover{
+            transform:translateY(-10px);
+            box-shadow:0 0 25px #d4a373;
+        }
+
+        .contact-info h2{
+            color:#d4a373;
+            margin-bottom:15px;
+        }
+
+        .contact-info p{
+            color:#ccc;
+            line-height:1.7;
+        }
+
+        /* FORM */
+        .contact-form{
+            background:#1a1a1a;
+            padding:30px;
+            border-radius:15px;
+            border:1px solid rgba(255,255,255,0.05);
+        }
+
+        .contact-form h2{
+            color:#d4a373;
+            margin-bottom:20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select{
+            width:100%;
+            padding:12px;
+            margin-bottom:15px;
+            border:none;
+            border-radius:8px;
+            background:#0f0f0f;
+            color:white;
+            outline:none;
+        }
+
+        .contact-form button{
+            width:100%;
+            padding:14px;
+            background:#d4a373;
+            border:none;
+            border-radius:8px;
+            font-size:18px;
+            cursor:pointer;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .contact-form button:hover{
+            background:white;
+            transform:scale(1.05);
+        }
+
+        .contact-form button:active{
+            transform:scale(0.98);
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="WhatsApp_Image_2026-05-18_at_11.21.50_AM-removebg-preview.png" alt="logo">
+        <h1>Royal Brew</h1>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="contact-hero">
+    <h1>Contact Us</h1>
+</section>
+
+<section class="contact-container">
+
+    <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <p>
+            Visit Royal Brew or send us your order directly through WhatsApp.
+            We are always ready to serve you premium coffee experience.
+        </p>
+        <p><b>Phone:</b> 0721547554</p>
+        <p><b>Service:</b> 24/7 Order Support</p>
+    </div>
+
+    <form class="contact-form" onsubmit="sendToWhatsapp(); return false;">
+
+        <h2>Order Form</h2>
+
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="address" placeholder="Your Address" required>
+        <input type="tel" id="phone" placeholder="Your Phone" required>
+
+        <select id="coffeeItem" required>
+            <option value="">Select Coffee</option>
+
+            <option value="Espresso - Rs 850">Espresso - Rs 850</option>
+            <option value="Cappuccino - Rs 1200">Cappuccino - Rs 1200</option>
+            <option value="Latte - Rs 1300">Latte - Rs 1300</option>
+            <option value="Mocha - Rs 1500">Mocha - Rs 1500</option>
+            <option value="Americano - Rs 900">Americano - Rs 900</option>
+            <option value="Flat White - Rs 1250">Flat White - Rs 1250</option>
+            <option value="Cold Brew - Rs 1400">Cold Brew - Rs 1400</option>
+            <option value="Macchiato - Rs 1150">Macchiato - Rs 1150</option>
+            <option value="Irish Coffee - Rs 1700">Irish Coffee - Rs 1700</option>
+            <option value="Vanilla Latte - Rs 1550">Vanilla Latte - Rs 1550</option>
+            <option value="Caramel Coffee - Rs 1600">Caramel Coffee - Rs 1600</option>
+            <option value="Hazelnut Coffee - Rs 1650">Hazelnut Coffee - Rs 1650</option>
+            <option value="Iced Latte - Rs 1450">Iced Latte - Rs 1450</option>
+            <option value="Affogato - Rs 1800">Affogato - Rs 1800</option>
+            <option value="Turkish Coffee - Rs 1900">Turkish Coffee - Rs 1900</option>
+            <option value="Frappe - Rs 1750">Frappe - Rs 1750</option>
+            <option value="Black Coffee - Rs 800">Black Coffee - Rs 800</option>
+            <option value="White Mocha - Rs 1850">White Mocha - Rs 1850</option>
+            <option value="Cinnamon Latte - Rs 1500">Cinnamon Latte - Rs 1500</option>
+            <option value="Signature Brew - Rs 2200">Signature Brew - Rs 2200</option>
+        </select>
+
+        <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+
+        <button type="submit">Send via WhatsApp</button>
+
+    </form>
+
+</section>
+
+<script>
+function sendToWhatsapp(){
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var address = document.getElementById("address").value;
+    var phone = document.getElementById("phone").value;
+    var coffeeItem = document.getElementById("coffeeItem").value;
+    var message = document.getElementById("message").value;
+
+    var whatsappNumber = "94721547554";
+
+    var url = "https://wa.me/" + whatsappNumber + "?text="
+    + "COFFEE ORDER DETAILS%0a%0a"
+    + "Name: " + name + "%0a"
+    + "Email: " + email + "%0a"
+    + "Address: " + address + "%0a"
+    + "Phone: " + phone + "%0a"
+    + "Coffee: " + coffeeItem + "%0a"
+    + "Message: " + message;
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>

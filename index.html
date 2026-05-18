@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Brew Coffee</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+	
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#0b0b0b;
+            color:white;
+        }
+		
+		
+}
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 8%;
+            background:rgba(0,0,0,0.6);
+            backdrop-filter:blur(10px);
+            position:fixed;
+            width:100%;
+            top:0;
+            z-index:1000;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo img{
+            width:60px;
+            animation:spin 12s linear infinite;
+        }
+
+        @keyframes spin{
+            100%{transform:rotate(360deg);}
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 12px;
+            font-size:16px;
+            position:relative;
+        }
+
+        nav a::after{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-5px;
+            width:0;
+            height:2px;
+            background:#d4a373;
+            transition:0.3s;
+        }
+
+        nav a:hover::after{
+            width:100%;
+        }
+
+        /* HERO SECTION */
+        .hero{
+            height:100vh;
+            background:linear-gradient(120deg,rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url('images/coffee-shop.jpg') center/cover no-repeat;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            padding:20px;
+        }
+
+        .hero-content{
+            max-width:900px;
+            animation:fadeUp 1.5s ease;
+        }
+
+        .hero-content h1{
+            font-size:65px;
+            color:#d4a373;
+            text-shadow:0 0 25px rgba(212,163,115,0.6);
+            margin-bottom:20px;
+        }
+
+        .hero-content p{
+            font-size:20px;
+            line-height:1.8;
+            color:#ddd;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            padding:14px 30px;
+            background:#d4a373;
+            border:none;
+            border-radius:30px;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:white;
+            transform:scale(1.08);
+        }
+
+        @keyframes fadeUp{
+            from{opacity:0; transform:translateY(40px);}
+            to{opacity:1; transform:translateY(0);}
+        }
+
+        /* STATS SECTION */
+        .stats{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:20px;
+            padding:60px 10%;
+            background:#111;
+            text-align:center;
+        }
+
+        .stat-box{
+            background:#1a1a1a;
+            padding:30px;
+            border-radius:15px;
+            transition:0.3s;
+        }
+
+        .stat-box:hover{
+            transform:translateY(-10px);
+            box-shadow:0 0 20px #d4a373;
+        }
+
+        .stat-box h2{
+            color:#d4a373;
+            font-size:40px;
+        }
+
+        .stat-box p{
+            color:#ccc;
+        }
+
+        /* FEATURE HERO BOTTOM */
+        .bottom-banner{
+            padding:80px 10%;
+            text-align:center;
+            background:linear-gradient(to right,#0b0b0b,#1a1a1a);
+        }
+
+        .bottom-banner h2{
+            font-size:40px;
+            color:#d4a373;
+            margin-bottom:15px;
+        }
+
+        .bottom-banner p{
+            color:#ccc;
+            font-size:18px;
+            line-height:1.7;
+            max-width:800px;
+            margin:auto;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="WhatsApp_Image_2026-05-18_at_11.21.50_AM-removebg-preview.png" alt="logo">
+        <h1>Royal Brew</h1>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Luxury Coffee Experience</h1>
+        <p>
+            Step into Royal Brew — where every cup is crafted with passion, premium beans,
+            and world-class barista skills. A place to relax, work, and enjoy perfection in every sip.
+        </p>
+        <button class="btn" onclick="window.location.href='menu.html'">Explore Menu</button>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="stat-box">
+        <h2>20+</h2>
+        <p>Coffee Varieties</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>1000+</h2>
+        <p>Happy Customers</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>5★</h2>
+        <p>Customer Rating</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>24/7</h2>
+        <p>Service Support</p>
+    </div>
+</section>
+
+<section class="bottom-banner">
+    <h2>Made for Coffee Lovers</h2>
+    <p>
+        Experience the aroma, taste, and luxury of handcrafted coffee designed to give
+        you the perfect moment every single time.
+    </p>
+</section>
+
+</body>
+</html>
